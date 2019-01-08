@@ -14,8 +14,8 @@ namespace Xamarin.Anto.ViewModels
         private string _title;
         public string Title
         {
-            get { return _title; }
-            set { SetProperty(ref _title, value); }
+            get => _title;
+            set => SetProperty(ref _title, value);
         }
 
         public ViewModelBase(INavigationService navigationService)
@@ -23,24 +23,21 @@ namespace Xamarin.Anto.ViewModels
             NavigationService = navigationService;
         }
 
-        public virtual void OnNavigatedFrom(NavigationParameters parameters)
-        {
-            
-        }
-
-        public virtual void OnNavigatedTo(NavigationParameters parameters)
-        {
-            
-        }
-
-        public virtual void OnNavigatingTo(NavigationParameters parameters)
-        {
-            
-        }
-
         public virtual void Destroy()
         {
             
+        }
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+        }
+
+        public void OnNavigatingTo(INavigationParameters parameters)
+        {
         }
     }
 }
